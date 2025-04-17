@@ -4,11 +4,11 @@
 int main(int argc, char *argv[]) {
   printf("Hello world!\n");
 
-  Array<int> arr(0);
+  Array<int, 5> arr;
 
   arr[0] = 1;
 
-  for (int i = 0; i < 1; i++) {
+  for (int i = 0; i < arr.length(); i++) {
     printf("%i \n", arr[i]);
   }
 }
