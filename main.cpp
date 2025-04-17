@@ -6,9 +6,11 @@ int main(int argc, char *argv[]) {
 
   Array<int, 5> arr;
 
-  arr[0] = 1;
-
   for (int i = 0; i < arr.length(); i++) {
+    arr[i] = i;
+  }
+
+  for (int i = 0; i < arr.length() + 2; i++) {
     printf("%i \n", arr[i]);
   }
 }
