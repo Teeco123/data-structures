@@ -52,6 +52,14 @@ int main(int argc, char *argv[]) {
     for (int i = 0; i < arr.length(); i++) {
       printf("arr [%i]: %i \n", i, arr[i]);
     }
+
+    printf("\n");
+    printf("Insert item\n");
+    arr.insert(23);
+    for (int i = 0; i < arr.length(); i++) {
+      printf("arr [%i]: %i \n", i, arr[i]);
+    }
+    printf("arr memory: %zu\n", arr.length() * sizeof(int));
   }
 
   printf("\n");

@@ -48,6 +48,19 @@ public:
     array = newArray;
   }
 
+  void insert(T value) {
+    size++;
+    T *newArray = new T[size];
+    newArray[0] = value;
+
+    for (int i = 1; i < length(); i++) {
+      newArray[i] = array[i - 1];
+    }
+
+    delete[] array;
+    array = newArray;
+  }
+
   T pop() {
     if (size == 0) {
       throw std::out_of_range("Pop from empty array");
