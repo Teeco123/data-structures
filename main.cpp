@@ -1,10 +1,13 @@
 #include "include/array.hpp"
+#include "include/queue.hpp"
 #include <cstdio>
 
 int main(int argc, char *argv[]) {
 
   Array<int, 5> arr;
   Array<int, 0> emptyArr;
+
+  Queue<int> queue;
 
   printf("5 Int Array\n");
   {
@@ -47,5 +50,20 @@ int main(int argc, char *argv[]) {
     for (int i = 0; i < arr.length(); i++) {
       printf("arr [%i]: %i \n", i, arr[i]);
     }
+  }
+
+  printf("\n");
+  printf("Queue test\n");
+  {
+    queue.enqueue(3);
+    printf("Current queue: %d\n", queue.peek());
+    queue.enqueue(8);
+    printf("Current queue: %d\n", queue.peek());
+    printf("Deque: %d\n", queue.deque());
+    printf("Current queue: %d\n", queue.peek());
+    printf("Deque: %d\n", queue.deque());
+    printf("Current queue: %d\n", queue.peek());
+    printf("Deque: %d\n", queue.deque());
+    printf("Current queue: %d\n", queue.peek());
   }
 }
