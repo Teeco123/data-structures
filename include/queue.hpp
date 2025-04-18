@@ -22,9 +22,11 @@ public:
     size++;
     if (head == nullptr) {
       head = newNode;
+      return;
     }
     if (tail == nullptr) {
       tail = newNode;
+      return;
     } else {
       tail->next = newNode;
       tail = newNode;
