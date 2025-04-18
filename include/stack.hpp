@@ -1,13 +1,13 @@
 #include <cstddef>
 
-template <typename T> struct Node {
+template <typename T> struct NodeStack {
   T value;
-  Node<T> *prev = nullptr;
+  NodeStack<T> *prev = nullptr;
 };
 
 template <typename T> class Stack {
 private:
-  Node<T> *head;
+  NodeStack<T> *head;
   size_t size;
 
 public:
@@ -17,7 +17,7 @@ public:
   size_t length() const { return size; }
 
   void push(T value) {
-    Node<T> *newNode = new Node<T>{value, nullptr};
+    NodeStack<T> *newNode = new NodeStack<T>{value, nullptr};
     size++;
     if (head == nullptr) {
       head = newNode;
@@ -26,7 +26,23 @@ public:
     newNode->prev = head;
     head = newNode;
   }
-  T pop() {}
+  T pop() {
+    // TODO: Handle better nullptr return
+    if (head == nullptr) {
+      return -1;
+    }
+
+    if (size == 0) {
+      NodeStack<T> *newNode = head;
+      head = nullptr;
+      return newNode->value;
+    }
+
+    size--;
+    NodeStack<T> *newNode = head;
+    head = head->prev;
+    return newNode->value;
+  }
 
   T peek() const {
     // TODO: Handle better nullptr return
