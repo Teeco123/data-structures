@@ -10,20 +10,20 @@ public:
   ~Array() { delete[] array; }
 
   T &operator[](size_t index) {
-    if (index >= initSize) {
+    if (index >= size) {
       throw std::out_of_range("Index out of bounds");
     }
     return array[index];
   }
 
   const T &operator[](size_t index) const {
-    if (index >= initSize) {
+    if (index >= size) {
       throw std::out_of_range("Index out of bounds");
     }
     return array[index];
   }
 
-  size_t length() const { return initSize; }
+  size_t length() const { return size; }
 
   int findIndex(T needle) const {
     for (size_t i = 0; i < length(); i++) {

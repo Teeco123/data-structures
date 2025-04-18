@@ -11,10 +11,10 @@ int main(int argc, char *argv[]) {
   }
 
   for (int i = 0; i < arr.length(); i++) {
-    printf("%i \n", arr[i]);
+    printf("arr [%i]: %i \n", i, arr[i]);
   }
 
-  printf("%du\n", arr.findIndex(20));
+  printf("arr findIndex: %d\n", arr.findIndex(20));
 
-  printf("%zu\n", arr.length() * sizeof(int));
+  printf("arr memory: %zu\n", arr.length() * sizeof(int));
 }
