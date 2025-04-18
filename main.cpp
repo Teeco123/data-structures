@@ -60,6 +60,14 @@ int main(int argc, char *argv[]) {
       printf("arr [%i]: %i \n", i, arr[i]);
     }
     printf("arr memory: %zu\n", arr.length() * sizeof(int));
+
+    printf("\n");
+    printf("InsertAt item\n");
+    arr.insertAt(80, 5);
+    for (int i = 0; i < arr.length(); i++) {
+      printf("arr [%i]: %i \n", i, arr[i]);
+    }
+    printf("arr memory: %zu\n", arr.length() * sizeof(int));
   }
 
   printf("\n");

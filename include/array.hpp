@@ -61,6 +61,22 @@ public:
     array = newArray;
   }
 
+  void insertAt(T value, size_t index) {
+    size++;
+    T *newArray = new T[size];
+    newArray[index] = value;
+
+    for (int i = 0; i < index; i++) {
+      newArray[i] = array[i];
+    }
+    for (int i = index + 1; i < length(); i++) {
+      newArray[i] = array[i - 1];
+    }
+
+    delete[] array;
+    array = newArray;
+  }
+
   T pop() {
     if (size == 0) {
       throw std::out_of_range("Pop from empty array");
