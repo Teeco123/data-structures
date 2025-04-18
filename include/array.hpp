@@ -1,32 +1,32 @@
 #include <stdexcept>
 
-template <typename T, int initSize> class Array {
+template <typename T, size_t initSize> class Array {
 private:
   T *array;
-  int size;
+  size_t size;
 
 public:
   Array() : size(initSize) { array = new T[size]; }
   ~Array() { delete[] array; }
 
-  T &operator[](int index) {
+  T &operator[](size_t index) {
     if (index >= initSize) {
       throw std::out_of_range("Index out of bounds");
     }
     return array[index];
   }
 
-  const T &operator[](int index) const {
+  const T &operator[](size_t index) const {
     if (index >= initSize) {
       throw std::out_of_range("Index out of bounds");
     }
     return array[index];
   }
 
-  int length() const { return initSize; }
+  size_t length() const { return initSize; }
 
   int findIndex(T needle) const {
-    for (int i = 0; i < length(); i++) {
+    for (size_t i = 0; i < length(); i++) {
       if (array[i] == needle) {
         return i;
       }

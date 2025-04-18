@@ -14,5 +14,7 @@ int main(int argc, char *argv[]) {
     printf("%i \n", arr[i]);
   }
 
-  printf("%i", arr.findIndex(2));
+  printf("%du\n", arr.findIndex(20));
+
+  printf("%zu\n", arr.length() * sizeof(int));
 }
