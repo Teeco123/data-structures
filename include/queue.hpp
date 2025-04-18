@@ -12,11 +12,7 @@ private:
   size_t size;
 
 public:
-  Queue() {
-    head = nullptr;
-    tail = nullptr;
-    size = 0;
-  }
+  Queue() : head(nullptr), tail(nullptr), size(0) {}
   ~Queue() {}
 
   size_t length() const { return size; }
