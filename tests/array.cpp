@@ -1,6 +1,6 @@
-#include "include/array.hpp"
-#include "include/queue.hpp"
-#include "include/stack.hpp"
+#include "../include/array.hpp"
+#include "../include/queue.hpp"
+#include "../include/stack.hpp"
 #include <catch2/catch_test_macros.hpp>
 
 TEST_CASE("Arrays", "[array]") {

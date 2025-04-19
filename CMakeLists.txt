@@ -17,8 +17,9 @@ FetchContent_MakeAvailable(Catch2)
 
 file(GLOB HEADERS include/*.hpp)
 file(GLOB SOURCES src/*.cpp)
+file(GLOB TESTS tests/*.cpp)
 
-add_executable(DataStructures main.cpp ${INCLUDE} ${SOURCES})
+add_executable(DataStructures ${TESTS} ${INCLUDE} ${SOURCES})
 target_link_libraries(DataStructures PRIVATE Catch2::Catch2WithMain)
 
 set_target_properties(DataStructures PROPERTIES
